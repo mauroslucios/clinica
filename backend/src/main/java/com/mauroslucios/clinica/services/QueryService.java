@@ -19,6 +19,9 @@ public class QueryService {
 	
 	@Transactional(readOnly = true)
 	public List<QueryDTO> findAl(){
+		/*
+		 * findOrdersWithQUerys()
+		 */
 		List<Query> list = queryRepository.findAllByOrderByMomentAsc();
 		return list.stream().map(x -> new QueryDTO(x)).collect(Collectors.toList());
 	}
